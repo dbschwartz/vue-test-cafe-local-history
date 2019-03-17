@@ -24,7 +24,7 @@
       <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
       <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
       <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
+      <li><a id="local-storage" v-on:click="open" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
   </div>
@@ -35,7 +35,21 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    URL: function () {
+      // `this` inside methods point to the Vue instance
+      return localStorage.getItem('link')
+    },
+    open: function () {
+      window.open(`${this.publicPath}localstorage.html`, '_blank')
+    }
+  },
+  data () {
+  return {
+    publicPath: process.env.BASE_URL
   }
+}
 }
 </script>
 

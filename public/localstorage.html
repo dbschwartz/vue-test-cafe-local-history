@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <h1>Below Should Come From Local Storage</h1>
+    <p id="local-storage"></p>
+    
+  </body>
+</html>
+
+<script>
+var p = document.getElementById('local-storage');
+const arr= JSON.parse(localStorage.getItem('link'))
+p.textContent = arr[0].link;
+</script>
