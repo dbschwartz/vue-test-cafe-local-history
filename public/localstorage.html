@@ -6,13 +6,14 @@
   </head>
   <body>
     <h1>Below Should Come From Local Storage</h1>
-    <p id="local-storage"></p>
+    <a id="second-link">Link to test cafe page</a>
     
   </body>
 </html>
 
 <script>
-var p = document.getElementById('local-storage');
+  
 const arr= JSON.parse(localStorage.getItem('link'))
-p.textContent = arr[0].link;
+const a = document.getElementById('second-link');
+a.href = arr[0].link;
 </script>
